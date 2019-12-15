@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="home">
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.recommend(class_="myButton") }}
+            </p>
+            
+            <div class="parent">
+                <div class="child_left">
+                    <h3>
+                        <b>{{ form.article_title.label }}</b>
+                    </h3>
+                </div>
+                <div class="child_right">
+                    <p>
+                        {{ form.article_title() }}
+                        {% for error in form.article_title.errors %}
+                        <span style="color: red;">[{{ error }}]</span>
+                        {% endfor %}
+                    </p>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="parent">
+                <div class="child_left">
+                    <h3>
+                        <b>{{ form.recommended_1.label }}</b>
+                    </h3>
+                </div>
+                <div class="child_right">
+                    <p>
+                        {{ form.recommended_1() }}
+                    </p>
+                </div>
+            </div>
+            <div class="parent">
+                <div class="child_left">
+                    <h3>
+                        <b>{{ form.recommended_2.label }}</b>
+                    </h3>
+                </div>
+                <div class="child_right">
+                    <p>
+                        {{ form.recommended_2() }}
+                    </p>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p><b><h2> Te-ar putea interesa si: </h2></b></p>
+            <div class="parent">
+                <div class="child_left">
+                    <h3>
+                        <b>{{ form.more_recommended_1.label }}</b>
+                    </h3>
+                </div>
+                <div class="child_right">
+                    <p>
+                        {{ form.more_recommended_1() }}
+                    </p>
+                </div>
+            </div>
+            <div class="parent">
+                <div class="child_left">
+                    <h3>
+                        <b>{{ form.more_recommended_2.label }}</b>
+                    </h3>
+                </div>
+                <div class="child_right">
+                    <p>
+                        {{ form.more_recommended_2() }}
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock %}
